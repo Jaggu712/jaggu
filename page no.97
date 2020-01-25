@@ -1,0 +1,49 @@
+Module Module1
+    Sub Main()
+
+    End Sub
+    Function validateregistration(ByVal registration As String)
+        Dim n As Integer
+        Dim returnflag As String
+        Dim validregistration As Boolean
+        Dim y As Integer
+
+        returnflag = True
+        validregistration = False
+
+        Console.WriteLine("input the registration number")
+        n = registration
+
+        If (n = 9 <> 6) Then
+            returnflag = False
+        Else
+            Console.WriteLine("registration number is incorrect")
+            Console.ReadKey()
+        End If
+
+        For y = 0 To 2
+            If (Mid(y, y + 1, y + 1)) >= 65 And Asc(Mid(y, y + 1, y + 1)) <= 90 Then
+                returnflag = True
+            Else : returnflag = False
+            End If
+        Next
+        For y = 1 To 2
+            If (Mid(y, y + 1, y + 1)) >= 65 And Asc(Mid(y, y + 1, y + 1)) <= 90 Then
+                returnflag = False
+            Else : returnflag = True
+            End If
+        Next
+        While n = 4
+            If (Mid(y, n + 1, n + 1)) >= 65 And Asc(Mid(n, n + 1, n + 1)) <= 90 Then
+                returnflag = True
+            Else : returnflag = False
+            End If
+            n = n + n + 1
+        End While
+        If returnflag = True Then
+            Console.WriteLine(" your registration number is correct")
+        Else : Console.ReadKey()
+        End If
+    End Function
+
+End Module
